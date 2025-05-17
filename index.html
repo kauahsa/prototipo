@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrueco Advogados | Escritório de Advocacia</title>
+    <style>
+        :root {
+            --primary: #0e3b5e;
+            --secondary:rgb(215, 78, 78);
+            --light: #f5f5f5;
+            --dark: #333;
+            --white: #fff;
+            --gray: #e6e6e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(14, 59, 94, 0.8), rgba(14, 59, 94, 0.9)), url('/api/placeholder/1200/800') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h3 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .area-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .area-img {
+            height: 200px;
+            background-color: var(--gray);
+        }
+        
+        .area-content {
+            padding: 25px;
+        }
+        
+        .area-content h4 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .team-member h4 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: var(--gray);
+        }
+        
+        .client-info h5 {
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .contact {
+            background: linear-gradient(rgba(14, 59, 94, 0.9), rgba(14, 59, 94, 0.9)), url('/api/placeholder/1200/800') no-repeat center center/cover;
+            color: var(--white);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .contact-form .btn {
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+            }
+            
+            .section-title h3 {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="/api/placeholder/50/50" alt="Barrueco Advogados Logo">
+                    <h1>Barrueco Advogados</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#areas">Áreas de Atuação</a></li>
+                        <li><a href="#equipe">Equipe</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Excelência Jurídica e Defesa dos seus Direitos</h2>
+                <p>Oferecemos soluções jurídicas personalizadas com atendimento humanizado e compromisso com resultados. Nosso escritório é especializado em Direito Civil, Empresarial, Trabalhista e Tributário.</p>
+                <div class="cta">
+                    <a href="#contato" class="btn">Agende uma Consulta</a>
+                    <a href="#areas" class="btn btn-outline">Nossas Áreas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Sobre o Escritório</h3>
+            </div>
+            <div class="about-content">
+                <p>O escritório Barrueco Advogados foi fundado com a missão de oferecer serviços jurídicos de alta qualidade, pautados pela ética, transparência e compromisso com os interesses dos clientes. Nossa equipe é formada por profissionais especializados em diversas áreas do Direito, preparados para atender com excelência as demandas de pessoas físicas e jurídicas.</p>
+                <br>
+                <p>Acreditamos que cada caso é único e merece um olhar personalizado. Por isso, trabalhamos de forma próxima aos nossos clientes, compreendendo suas necessidades e construindo estratégias jurídicas eficientes para a resolução de seus conflitos e proteção de seus direitos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Áreas de Atuação</h3>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-img"></div>
+                    <div class="area-content">
+                        <h4>Direito Civil</h4>
+                        <p>Contratos, Responsabilidade Civil, Direito de Família e Sucessões, Direito Imobiliário e Direito do Consumidor.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <div class="area-img"></div>
+                    <div class="area-content">
+                        <h4>Direito Empresarial</h4>
+                        <p>Assessoria para empresas, Contratos Empresariais, Recuperação Judicial, Falência e questões Societárias.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <div class="area-img"></div>
+                    <div class="area-content">
+                        <h4>Direito Trabalhista</h4>
+                        <p>Relações de Trabalho, Reclamações Trabalhistas, Acordos e Convenções Coletivas, Direito Sindical.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <div class="area-img"></div>
+                    <div class="area-content">
+                        <h4>Direito Tributário</h4>
+                        <p>Planejamento Tributário, Contencioso Administrativo e Judicial, Recuperação de Créditos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Nossa Equipe</h3>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/180/180" alt="Dr. Carlos Barrueco">
+                    </div>
+                    <h4>Dr.Fernando Barrueco</h4>
+                    <p>Sócio Fundador</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/180/180" alt="Dra. Fernanda Santos">
+                    </div>
+                    <h4>Dr. André Andrade</h4>
+                    <p>Especialista em Direito Civil</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/180/180" alt="Dr. Rafael Oliveira">
+                    </div>
+                    <h4>Dr. Rafael Oliveira</h4>
+                    <p>Especialista em Direito Tributário</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/180/180" alt="Dra. Camila Mendes">
+                    </div>
+                    <h4>Dra. Camila Mendes</h4>
+                    <p>Especialista em Direito Trabalhista</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h3>Depoimentos</h3>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"O escritório Barrueco Advogados foi fundamental na resolução do meu processo. Profissionais comprometidos, atenciosos e com grande conhecimento jurídico."</p>
+                    <div class="client">
+                        <div class="client-img"></div>
+                        <div class="client-info">
+                            <h5>Marcos Silva</h5>
+                            <p>Cliente desde 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Excelente atendimento. Soluções eficientes e rápidas para as questões jurídicas da minha empresa. Recomendo fortemente!"</p>
+                    <div class="client">
+                        <div class="client-img"></div>
+                        <div class="client-info">
+                            <h5>Ana Ferreira</h5>
+                            <p>Gestora de Empresa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Profissionais extremamente capacitados e dedicados. O acompanhamento do meu caso foi impecável do início ao fim."</p>
+                    <div class="client">
+                        <div class="client-img"></div>
+                        <div class="client-info">
+                            <h5>Roberto Almeida</h5>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h3 style="color: white;">Entre em Contato</h3>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Av. Paulista, 1000, Conj. 101 - São Paulo/SP</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(11) 3456-7890</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contato@barruecoadvogados.com.br</p>
+                        </div>
+                    </div>
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 9h às 18h</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome Completo">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Assunto">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#areas">Áreas</a>
+                <a href="#equipe">Equipe</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <p>&copy; 2025 Barrueco Advogados - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
