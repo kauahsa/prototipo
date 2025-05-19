@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Barrueco Advogados | Escritório de Advocacia</title>
     <style>
         :root {
@@ -67,36 +68,36 @@
         }
 
         .menu-link {
-    color: var(--dark);
-    text-decoration: none;
-    position: relative;
-    font-weight: 500;
-    font-size: 16px;
-}
+            color: var(--dark);
+            text-decoration: none;
+            position: relative;
+            font-weight: 500;
+            font-size: 16px;
+        }
 
-.menu-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--secondary);
-    transition: width 0.3s;
-}
+        .menu-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
 
-.menu-link:hover::after,
-.menu-link.active::after {
-    width: 100%;
-}
+        .menu-link:hover::after,
+        .menu-link.active::after {
+            width: 100%;
+        }
 
-.menu-link:hover {
-    color: var(--primary);
-}
+        .menu-link:hover {
+            color: var(--primary);
+        }
 
-.menu-link.active {
-    color: #003366;
-}
+        .menu-link.active {
+            color: #003366;
+        }
 
 
         nav ul {
@@ -192,7 +193,26 @@
             transition: all 0.3s;
             border: 2px solid var(--secondary);
         }
-
+        
+        .btn-form {
+            background-color: var(--secondary);
+            cursor: pointer;
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+        }  
+        .btn-form:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        } 
+        .btn-form:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         .btn:hover {
             background-color: transparent;
             color: var(--secondary);
@@ -682,7 +702,7 @@
                         <li><a href="#inicio" class="menu-link">Início</a></li>
                         <li><a href="#sobre" class="menu-link">Sobre</a></li>
                         <li><a href="#areas" class="menu-link">Atuação</a></li>
-                        <li><a href="#equipe" class="menu-link">Equipe</a></li>
+                        <li><a href="paginas/equipe.html" class="menu-link">Equipe</a></li>
                         <li><a href="#testemunha" class="menu-link">Depoimentos</a></li>
                         <li><a href="#redes" class="menu-link">Redes</a></li>
                         <li><a href="#contato" class="menu-link">Contato</a></li>
@@ -803,59 +823,6 @@
         </div>
     </section>
 
-    <section id="equipe" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h3>Nossa Equipe</h3>
-            </div>
-            <div class="team-members">
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="/api/placeholder/180/180" alt="Dr. Carlos Barrueco">
-                    </div>
-                    <h4>Dr.Fernando Barrueco</h4>
-                    <p>Sócio Fundador</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="/api/placeholder/180/180" alt="Dra. Fernanda Santos">
-                    </div>
-                    <h4>Dr. André Andrade</h4>
-                    <p>Especialista em Direito Civil</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="/api/placeholder/180/180" alt="Dr. Rafael Oliveira">
-                    </div>
-                    <h4>Dr. Rafael Oliveira</h4>
-                    <p>Especialista em Direito Tributário</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="/api/placeholder/180/180" alt="Dra. Camila Mendes">
-                    </div>
-                    <h4>Dra. Camila Mendes</h4>
-                    <p>Especialista em Direito Trabalhista</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="testemunha" class="section testimonials">
         <div class="container">
@@ -971,6 +938,10 @@
 
                         </div>
                         <div class="contact-item">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i>
+                            <p>(12) 34567-8901</p>
+                        </div>
+                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <p>(11) 3168-1111</p>
                         </div>
@@ -999,7 +970,7 @@
                         <div class="form-group">
                             <textarea rows="5" placeholder="Mensagem"></textarea>
                         </div>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
+                        <button type="submit" class="btn-form">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
@@ -1031,26 +1002,26 @@
                 });
             });
 
-             const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".menu-link");
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".menu-link");
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href").substring(1) === entry.target.id) {
-                        link.classList.add("active");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href").substring(1) === entry.target.id) {
+                                link.classList.add("active");
+                            }
+                        });
                     }
                 });
-            }
-        });
-    }, {
-        threshold: 0.6 // Ativa quando 50% da seção estiver visível
-    });
+            }, {
+                threshold: 0.6 // Ativa quando 50% da seção estiver visível
+            });
 
-    sections.forEach(section => observer.observe(section));
-});
+            sections.forEach(section => observer.observe(section));
+        });
     </script>
 </body>
 
