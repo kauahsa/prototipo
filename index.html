@@ -193,7 +193,7 @@
             transition: all 0.3s;
             border: 2px solid var(--secondary);
         }
-        
+
         .btn-form {
             background-color: var(--secondary);
             cursor: pointer;
@@ -204,15 +204,18 @@
             font-weight: 600;
             transition: all 0.3s;
             border: 2px solid var(--secondary);
-        }  
+        }
+
         .btn-form:hover {
             background-color: transparent;
             color: var(--secondary);
-        } 
+        }
+
         .btn-form:active {
             transform: translateY(2px);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .btn:hover {
             background-color: transparent;
             color: var(--secondary);
@@ -345,6 +348,123 @@
             margin-bottom: 15px;
         }
 
+        .newsletter-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .newsletter-intro {
+            margin-bottom: 30px;
+        }
+
+        .newsletter-intro p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .newsletter-benefits {
+            list-style: none;
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .newsletter-benefits li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .newsletter-benefits li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        .newsletter-form-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .newsletter-form {
+            width: 100%;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form-group {
+            flex: 1;
+        }
+
+        .newsletter-form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 5px rgba(14, 59, 94, 0.3);
+        }
+
+        .newsletter-submit {
+            margin-bottom: 15px;
+        }
+
+        .btn-newsletter {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-newsletter:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        .btn-newsletter:active {
+            transform: translateY(2px);
+        }
+
+        .newsletter-privacy {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .newsletter-privacy a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .newsletter-privacy a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+
         .social-icons {
             display: flex;
             justify-content: center;
@@ -382,6 +502,51 @@
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 101;
+            border-radius: 4px;
+            padding: 8px 0;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            margin: 0 !important;
+            padding: 0;
+            display: block;
+        }
+
+        .submenu li a {
+            padding: 10px 16px;
+            display: block;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .submenu li a:hover {
+            background-color: #f5f5f5;
+            color: var(--secondary);
+        }
+
+        .submenu li a::after {
+            display: none !important;
         }
 
         .testimonial p {
@@ -683,6 +848,18 @@
             .social-intro {
                 font-size: 16px;
             }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .newsletter-content {
+                padding: 30px 20px;
+            }
+
+            .newsletter-intro p {
+                font-size: 16px;
+            }
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -704,6 +881,10 @@
                         <li><a href="#areas" class="menu-link">Atuação</a></li>
                         <li><a href="paginas/equipe.html" class="menu-link">Equipe</a></li>
                         <li><a href="#testemunha" class="menu-link">Depoimentos</a></li>
+                        <li class="dropdown">
+                            <a href="paginas/noticias.html" class="menu-link">Notícias</a>
+                            
+                        </li>
                         <li><a href="#redes" class="menu-link">Redes</a></li>
                         <li><a href="#contato" class="menu-link">Contato</a></li>
                         <li><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button id="btn-header">Acompanhe
@@ -865,6 +1046,43 @@
                             <p>Cliente desde 2020</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="newsletter" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Boletim Jurídico</h3>
+            </div>
+            <div class="newsletter-content">
+                <div class="newsletter-intro">
+                    <p>Inscreva-se em nosso newsletter e receba gratuitamente:</p>
+                    <ul class="newsletter-benefits">
+                        <li><i class="fas fa-check-circle"></i> Atualizações sobre mudanças na legislação</li>
+                        <li><i class="fas fa-check-circle"></i> Artigos exclusivos escritos por nossos especialistas
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Convites para webinars e eventos jurídicos</li>
+                    </ul>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form">
+                        <div class="form-row">
+                            <div class="newsletter-form-group">
+                                <input type="text" placeholder="Nome Completo" required>
+                            </div>
+                            <div class="newsletter-form-group">
+                                <input type="email" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="newsletter-submit">
+                            <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                        </div>
+                        <div class="newsletter-privacy">
+                            <small>Ao se inscrever, você concorda com nossa <a href="#">Política de Privacidade</a>.
+                                Você pode cancelar sua inscrição a qualquer momento.</small>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
