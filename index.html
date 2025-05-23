@@ -6,864 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Barrueco Advogados | Escritório de Advocacia</title>
-    <style>
-        :root {
-            --primary: #0e3b5e;
-            --secondary: rgb(215, 78, 78);
-            --light: #f5f5f5;
-            --dark: #333;
-            --white: #fff;
-            --gray: #e6e6e6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            color: var(--dark);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--white);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 60px;
-        }
-
-        .logo h1 {
-            margin-left: 10px;
-            font-size: 24px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .menu-link {
-            color: var(--dark);
-            text-decoration: none;
-            position: relative;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        .menu-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        .menu-link:hover::after,
-        .menu-link.active::after {
-            width: 100%;
-        }
-
-        .menu-link:hover {
-            color: var(--primary);
-        }
-
-        .menu-link.active {
-            color: #003366;
-        }
-
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav ul li a:not(:has(button))::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        nav button {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 10px 20px;
-            margin-left: 60px;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        nav button:hover {
-            transform: translateY(-10%);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-
-
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(14, 59, 94, 0.8), rgba(14, 59, 94, 0.9)), url('/api/placeholder/1200/800') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-form {
-            background-color: var(--secondary);
-            cursor: pointer;
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-form:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-
-        .btn-form:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h3 {
-            font-size: 36px;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h3:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .areas-section {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-
-
-        .area-card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 3px solid transparent;
-        }
-
-        .area-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            border-bottom: 3px solid #3498db;
-        }
-
-        .area-icon {
-            font-size: 48px;
-            color: #3498db;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .area-card:hover .area-icon {
-            transform: scale(1.2);
-        }
-
-        .area-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .area-desc {
-            font-size: 14px;
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-
-        .team-members {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .member-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 5px solid var(--light);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-member h4 {
-            color: var(--primary);
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-
-        .team-member p {
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .newsletter-intro {
-            margin-bottom: 30px;
-        }
-
-        .newsletter-intro p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .newsletter-benefits {
-            list-style: none;
-            text-align: left;
-            margin-left: 20px;
-        }
-
-        .newsletter-benefits li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .newsletter-benefits li i {
-            color: var(--secondary);
-            margin-right: 10px;
-        }
-
-        .newsletter-form-container {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .newsletter-form {
-            width: 100%;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-form-group {
-            flex: 1;
-        }
-
-        .newsletter-form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .newsletter-form-group input:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 5px rgba(14, 59, 94, 0.3);
-        }
-
-        .newsletter-submit {
-            margin-bottom: 15px;
-        }
-
-        .btn-newsletter {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--secondary);
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .btn-newsletter:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-
-        .btn-newsletter:active {
-            transform: translateY(2px);
-        }
-
-        .newsletter-privacy {
-            margin-top: 10px;
-            color: #666;
-        }
-
-        .newsletter-privacy a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .newsletter-privacy a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsividade */
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--secondary);
-        }
-
-        .testimonials {
-            background-color: var(--light);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            z-index: 101;
-            border-radius: 4px;
-            padding: 8px 0;
-        }
-
-        .dropdown:hover .submenu {
-            display: block;
-        }
-
-        .submenu li {
-            margin: 0 !important;
-            padding: 0;
-            display: block;
-        }
-
-        .submenu li a {
-            padding: 10px 16px;
-            display: block;
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-
-        .submenu li a:hover {
-            background-color: #f5f5f5;
-            color: var(--secondary);
-        }
-
-        .submenu li a::after {
-            display: none !important;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .client {
-            display: flex;
-            align-items: center;
-        }
-
-        .client-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            background-color: var(--gray);
-        }
-
-        .client-info h5 {
-            color: var(--primary);
-            font-size: 18px;
-        }
-
-        .contact {
-            background: linear-gradient(rgba(14, 59, 94, 0.9), rgba(14, 59, 94, 0.9)), url('/api/placeholder/1200/800') no-repeat center center/cover;
-            color: var(--white);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            margin-bottom: 15px;
-        }
-
-        .contact-item i {
-            margin-right: 15px;
-            color: var(--secondary);
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-form .btn {
-            border: none;
-            cursor: pointer;
-            width: auto;
-        }
-
-        .social-media {
-            background-color: var(--white);
-            padding: 80px 0;
-        }
-
-        .social-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-size: 18px;
-            color: var(--dark);
-        }
-
-        .social-platforms {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .social-platform {
-            display: flex;
-            align-items: center;
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 20px;
-            text-decoration: none;
-            color: var(--dark);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .social-platform:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .platform-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            color: var(--white);
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .social-platform:hover .platform-icon {
-            background-color: var(--secondary);
-            transform: scale(1.1);
-        }
-
-        .platform-info h4 {
-            margin: 0 0 5px;
-            font-size: 18px;
-            color: var(--primary);
-        }
-
-        .platform-info p {
-            margin: 0 0 10px;
-            color: var(--dark);
-            font-size: 14px;
-        }
-
-        .follow-btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .social-platform:hover .follow-btn {
-            background-color: var(--secondary);
-        }
-
-        .social-feed {
-            text-align: center;
-        }
-
-        .feed-title {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .feed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .feed-item {
-            position: relative;
-            height: 180px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .feed-img {
-            width: 100%;
-            height: 100%;
-            background-color: var(--gray);
-            background-image: url('/api/placeholder/180/180');
-            background-size: cover;
-            background-position: center;
-            transition: all 0.3s ease;
-        }
-
-        .feed-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(14, 59, 94, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 24px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .feed-item:hover .feed-img {
-            transform: scale(1.1);
-        }
-
-        .feed-item:hover .feed-overlay {
-            opacity: 1;
-        }
-
-        .social-btn {
-            background-color: var(--secondary);
-            border: 2px solid var(--secondary);
-            margin-top: 20px;
-        }
-
-        .social-btn:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-
-        @media (max-width: 768px) {
-            .areas-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
-            }
-
-            .hero h2 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .nav-container {
-                flex-direction: column;
-            }
-
-            nav ul {
-                margin-top: 20px;
-            }
-
-            nav ul li {
-                margin-left: 15px;
-            }
-
-            .section-title h3 {
-                font-size: 28px;
-            }
-
-            .social-platforms {
-                grid-template-columns: 1fr;
-            }
-
-            .feed-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .social-intro {
-                font-size: 16px;
-            }
-
-            .form-row {
-                flex-direction: column;
-            }
-
-            .newsletter-content {
-                padding: 30px 20px;
-            }
-
-            .newsletter-intro p {
-                font-size: 16px;
-            }
-        }
-    </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -871,7 +16,7 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="imagens/logo.png" alt="Barrueco Advogados Logo">
+                    <img src="imagens/logo_corrigida.png" alt="Barrueco Advogados Logo">
                     <h1></h1>
                 </div>
                 <nav>
@@ -883,14 +28,11 @@
                         <li><a href="#testemunha" class="menu-link">Depoimentos</a></li>
                         <li class="dropdown">
                             <a href="paginas/noticias.html" class="menu-link">Notícias</a>
-                            
                         </li>
                         <li><a href="#redes" class="menu-link">Redes</a></li>
                         <li><a href="#contato" class="menu-link">Contato</a></li>
-                        <li><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button id="btn-header">Acompanhe
-                                    seu processo</button></a></li>
+                        <li><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button id="btn-header">Acompanhe seu processo</button></a></li>
                     </ul>
-
                 </nav>
             </div>
         </div>
@@ -900,13 +42,10 @@
         <div class="container">
             <div class="hero-content">
                 <h2>Excelência Jurídica e Defesa dos seus Direitos</h2>
-                <p>Oferecemos soluções jurídicas personalizadas com atendimento humanizado e
-                    compromisso com resultados.
-                    Nosso escritório é especializado em Direito Civil, Empresarial, Trabalhista e
-                    Tributário.</p>
+                <p>Oferecemos soluções jurídicas personalizadas com atendimento humanizado e compromisso com resultados. Nosso escritório é especializado em Direito Civil, Empresarial, Trabalhista e Tributário.</p>
                 <div class="cta">
                     <a href="#contato" class="btn">Agende uma Reunião</a>
-                    <a href="#areas" class="btn btn-outline">Nossas Áreas</a>
+                    <a href="#areas" class=" btn-outline btn">Nossas Áreas</a>
                 </div>
             </div>
         </div>
@@ -918,20 +57,9 @@
                 <h3>Sobre o Escritório</h3>
             </div>
             <div class="about-content">
-                <p>O escritório Barrueco Advogados foi fundado com a missão de oferecer serviços
-                    jurídicos de alta
-                    qualidade, pautados pela ética, transparência e compromisso com os
-                    interesses dos clientes. Nossa
-                    equipe é formada por profissionais especializados em diversas áreas do
-                    Direito, preparados para
-                    atender com excelência as demandas de pessoas físicas e jurídicas.</p>
+                <p>O escritório Barrueco Advogados foi fundado com a missão de oferecer serviços jurídicos de alta qualidade, pautados pela ética, transparência e compromisso com os interesses dos clientes. Nossa equipe é formada por profissionais especializados em diversas áreas do Direito, preparados para atender com excelência as demandas de pessoas físicas e jurídicas.</p>
                 <br>
-                <p>Acreditamos que cada caso é único e merece um olhar personalizado. Por isso,
-                    trabalhamos de forma
-                    próxima aos nossos clientes, compreendendo suas necessidades e construindo
-                    estratégias jurídicas
-                    eficientes para a resolução de seus conflitos e proteção de seus direitos.
-                </p>
+                <p>Acreditamos que cada caso é único e merece um olhar personalizado. Por isso, trabalhamos de forma próxima aos nossos clientes, compreendendo suas necessidades e construindo estratégias jurídicas eficientes para a resolução de seus conflitos e proteção de seus direitos.</p>
             </div>
         </div>
     </section>
@@ -939,308 +67,269 @@
     <section id="areas" class="areas-section">
         <div class="container">
             <div class="section-title">
-                <h3>Áreas de Atuação</h2>
+                <h3>Áreas de Atuação</h3>
             </div>
-
             <div class="areas-grid">
                 <div class="area-card">
                     <div class="area-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-balance-scale"></i>
                     </div>
-                    <h3 class="area-title">Direito Empresarial</h3>
-                    <p class="area-desc">Assessoria jurídica completa para empresas de todos os portes, incluindo
-                        constituição, alterações contratuais e planejamento estratégico.</p>
+                    <h4 class="area-title">Direito Civil</h4>
+                    <p class="area-desc">Contratos, responsabilidade civil, direito de família, sucessões e questões imobiliárias.</p>
                 </div>
-
-                <div class="area-card">
-                    <div class="area-icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3 class="area-title">Direito Trabalhista</h3>
-                    <p class="area-desc">Orientação para empregadores e empregados em questões trabalhistas, com foco na
-                        prevenção de litígios e representação em processos.</p>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="area-title">Direito Contratual</h3>
-                    <p class="area-desc">Elaboração, análise e revisão de contratos comerciais, civis e empresariais,
-                        garantindo segurança jurídica nas relações.</p>
-                </div>
+                
                 <div class="area-card">
                     <div class="area-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3 class="area-title">Direito Imobiliário</h3>
-                    <p class="area-desc">Assessoria em transações imobiliárias, regularização de imóveis e resolução de
-                        conflitos em contratos de locação e compra.</p>
+                    <h4 class="area-title">Direito Empresarial</h4>
+                    <p class="area-desc">Constituição de empresas, contratos comerciais, recuperação judicial e dissolução societária.</p>
                 </div>
-
-
-
-
-                <div class="area-card">
-                    <div class="area-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3 class="area-title">Direito Tributário</h3>
-                    <p class="area-desc">Planejamento tributário, defesa em processos administrativos e judiciais e
-                        recuperação de créditos tributários.</p>
-                </div>
-
+                
                 <div class="area-card">
                     <div class="area-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="area-title">Direito Civil</h3>
-                    <p class="area-desc">Representação em questões civis como responsabilidade civil, obrigações e
-                        contratos entre pessoas físicas e jurídicas.</p>
+                    <h4 class="area-title">Direito Trabalhista</h4>
+                    <p class="area-desc">Relações de trabalho, rescisões, acordos trabalhistas e defesa em ações judiciais.</p>
                 </div>
-
-
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h4 class="area-title">Direito Tributário</h4>
+                    <p class="area-desc">Planejamento tributário, revisão de tributos e defesa em processos fiscais.</p>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h4 class="area-title">Direito Penal</h4>
+                    <p class="area-desc">Defesa criminal, habeas corpus, recursos e acompanhamento processual.</p>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h4 class="area-title">Direito Administrativo</h4>
+                    <p class="area-desc">Licitações, contratos públicos, servidores públicos e mandados de segurança.</p>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <section id="testemunha" class="section testimonials">
+    <section id="testemunha" class="testimonials section">
         <div class="container">
             <div class="section-title">
                 <h3>Depoimentos</h3>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    <p>"O escritório Barrueco Advogados foi fundamental na resolução do meu
-                        processo. Profissionais
-                        comprometidos, atenciosos e com grande conhecimento jurídico."</p>
+                    <p>"Excelente atendimento e profissionalismo. Conseguiram resolver meu caso de forma rápida e eficiente."</p>
                     <div class="client">
                         <div class="client-img"></div>
                         <div class="client-info">
-                            <h5>Marcos Silva</h5>
-                            <p>Cliente desde 2018</p>
+                            <h5>Maria Silva</h5>
+                            <p>Empresária</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial">
-                    <p>"Excelente atendimento. Soluções eficientes e rápidas para as questões
-                        jurídicas da minha
-                        empresa. Recomendo fortemente!"</p>
+                    <p>"Equipe muito competente e dedicada. Recomendo para quem busca um escritório de advocacia sério e comprometido."</p>
                     <div class="client">
                         <div class="client-img"></div>
                         <div class="client-info">
-                            <h5>Ana Ferreira</h5>
-                            <p>Gestora de Empresa</p>
+                            <h5>João Santos</h5>
+                            <p>Contador</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial">
-                    <p>"Profissionais extremamente capacitados e dedicados. O acompanhamento do
-                        meu caso foi impecável
-                        do início ao fim."</p>
+                    <p>"Atendimento humanizado e resultado excelente. Superaram minhas expectativas em todos os aspectos."</p>
                     <div class="client">
                         <div class="client-img"></div>
                         <div class="client-info">
-                            <h5>Roberto Almeida</h5>
-                            <p>Cliente desde 2020</p>
+                            <h5>Ana Costa</h5>
+                            <p>Médica</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="newsletter" class="section">
+
+    <section id="redes" class="social-media">
         <div class="container">
             <div class="section-title">
-                <h3>Boletim Jurídico</h3>
+                <h3>Siga-nos nas Redes Sociais</h3>
             </div>
+            <div class="social-intro">
+                <p>Mantenha-se atualizado com as últimas novidades do mundo jurídico e acompanhe nosso trabalho através de nossas redes sociais.</p>
+            </div>
+            
+            <div class="social-platforms">
+                <a href="#" class="social-platform">
+                    <div class="platform-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h4>Instagram</h4>
+                        <p>Dicas jurídicas e bastidores do escritório</p>
+                        <span class="follow-btn">Seguir</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-platform">
+                    <div class="platform-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h4>LinkedIn</h4>
+                        <p>Artigos e atualizações profissionais</p>
+                        <span class="follow-btn">Conectar</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-platform">
+                    <div class="platform-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h4>Facebook</h4>
+                        <p>Notícias e interação com a comunidade</p>
+                        <span class="follow-btn">Curtir</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-platform">
+                    <div class="platform-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h4>YouTube</h4>
+                        <p>Vídeos educativos sobre direito</p>
+                        <span class="follow-btn">Inscrever</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter section">
+        <div class="container">
             <div class="newsletter-content">
                 <div class="newsletter-intro">
-                    <p>Inscreva-se em nosso newsletter e receba gratuitamente:</p>
+                    <div class="section-title">
+                        <h3>Newsletter Jurídica</h3>
+                    </div>
+                    <p>Receba em primeira mão as principais atualizações do mundo jurídico e dicas importantes para proteger seus direitos.</p>
+                    
                     <ul class="newsletter-benefits">
-                        <li><i class="fas fa-check-circle"></i> Atualizações sobre mudanças na legislação</li>
-                        <li><i class="fas fa-check-circle"></i> Artigos exclusivos escritos por nossos especialistas
-                        </li>
-                        <li><i class="fas fa-check-circle"></i> Convites para webinars e eventos jurídicos</li>
+                        <li><i class="fas fa-check"></i> Atualizações legislativas importantes</li>
+                        <li><i class="fas fa-check"></i> Dicas práticas sobre direitos</li>
+                        <li><i class="fas fa-check"></i> Análises de casos relevantes</li>
+                        <li><i class="fas fa-check"></i> Conteúdo exclusivo e gratuito</li>
                     </ul>
                 </div>
+                
                 <div class="newsletter-form-container">
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" id="newsletterForm">
                         <div class="form-row">
                             <div class="newsletter-form-group">
-                                <input type="text" placeholder="Nome Completo" required>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
                             </div>
                             <div class="newsletter-form-group">
-                                <input type="email" placeholder="E-mail" required>
+                                <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
                             </div>
                         </div>
+                        
                         <div class="newsletter-submit">
-                            <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                            <button type="submit" class="btn-newsletter">Quero Receber a Newsletter</button>
                         </div>
-                        <div class="newsletter-privacy">
-                            <small>Ao se inscrever, você concorda com nossa <a href="#">Política de Privacidade</a>.
-                                Você pode cancelar sua inscrição a qualquer momento.</small>
-                        </div>
+                        
+                        <p class="newsletter-privacy">
+                            Seus dados estão seguros. Leia nossa <a href="#">Política de Privacidade</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <section id="redes" class="section social-media">
-        <div class="container">
-            <div class="section-title">
-                <h3>Redes Sociais</h3>
-            </div>
-            <div class="social-media-content">
-                <p class="social-intro">Acompanhe nossas atualizações, artigos jurídicos e novidades sobre o escritório
-                    em nossas redes sociais:</p>
 
-                <div class="social-platforms">
-                    <a href="#" class="social-platform">
-                        <div class="platform-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="platform-info">
-                            <h4>Instagram</h4>
-                            <p>@barruecoadvogados</p>
-                            <span class="follow-btn">Seguir</span>
-                        </div>
-                    </a>
-
-                    <a href="#" class="social-platform">
-                        <div class="platform-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="platform-info">
-                            <h4>LinkedIn</h4>
-                            <p>Barrueco Advogados</p>
-                            <span class="follow-btn">Conectar</span>
-                        </div>
-                    </a>
-
-                    <a href="#" class="social-platform">
-                        <div class="platform-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                        <div class="platform-info">
-                            <h4>Facebook</h4>
-                            <p>Barrueco Advogados</p>
-                            <span class="follow-btn">Curtir</span>
-                        </div>
-                    </a>
-
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="section contact">
+    <section id="contato" class="contact section">
         <div class="container">
             <div class="section-title">
                 <h3 style="color: white;">Entre em Contato</h3>
             </div>
             <div class="contact-content">
-                <div class="contact-info" style="font-size: 14px;">
-                    <h3>Informações de Contato</h3>
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Matriz: Av. Cidade Jardim, 377 <br>9º andar – Itaim Bibi – São
-                                Paulo – CEP 01453-000
-                                <br><br> Filial: Rua Iporans, 737 <br>Sala 10, Centro –
-                                Tupã/SP – CEP 17601-170
-                            </p>
-
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i>
-                            <p>(12) 34567-8901</p>
+                            <p>Rua das Flores, 123 - Centro<br>São Paulo, SP - CEP: 01234-567</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <p>(11) 3168-1111</p>
+                            <p>(11) 3456-7890</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <p>contato@barruecoadvogados.com.br</p>
                         </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                        </div>
                     </div>
-                    <h3>Horário de Atendimento</h3>
-                    <p>Segunda a Sexta: 9h às 18h</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
+                
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Nome Completo">
+                            <input type="text" name="nome" placeholder="Seu nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="E-mail">
+                            <input type="email" name="email" placeholder="Seu e-mail" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Telefone">
+                            <input type="tel" name="telefone" placeholder="Seu telefone">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Assunto">
+                            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Mensagem"></textarea>
-                        </div>
-                        <button type="submit" class="btn-form">Enviar Mensagem</button>
+                        <button type="submit" class="btn btn-form">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
 
     <footer>
         <div class="container">
             <div class="footer-links">
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
-                <a href="#areas">Áreas</a>
-                <a href="#equipe">Equipe</a>
+                <a href="#areas">Atuação</a>
                 <a href="#contato">Contato</a>
+                <a href="#">Política de Privacidade</a>
             </div>
-            <p>&copy; 2025 Barrueco Advogados - Todos os direitos reservados</p>
+            <p>&copy; 2024 Barrueco Advogados. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script>
-        // Script simples para scroll suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".menu-link");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove("active");
-                            if (link.getAttribute("href").substring(1) === entry.target.id) {
-                                link.classList.add("active");
-                            }
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.6 // Ativa quando 50% da seção estiver visível
-            });
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
