@@ -96,7 +96,7 @@ nav ul li {
 }
 
 .menu-link {
-    color: var(--text-dark);
+    color: white;
     text-decoration: none;
     position: relative;
     font-weight: 500;
@@ -111,7 +111,7 @@ nav ul li {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: var(--secondary);
+    background-color: #c2a661;
     transition: width 0.3s ease;
 }
 
@@ -122,7 +122,7 @@ nav ul li {
 
 .menu-link:hover,
 .menu-link.active {
-    color: var(--primary);
+    color: #f4f4f4;
 }
 
 #btn-header {
