@@ -7,13 +7,37 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <title>Nossa Equipe | Barrueco Advogados</title>
     <style>
+        /* Paleta de cores reformulada baseada em #695643 */
         :root {
-            --primary: #0e3b5e;
-            --secondary: rgb(215, 78, 78);
-            --light: #f5f5f5;
-            --dark: #333;
-            --white: #fff;
-            --gray: #e6e6e6;
+            --primary: #695643;
+            /* Cor base fornecida */
+            --primary-dark: #4a3c2e;
+            /* Tom mais escuro */
+            --primary-light: #857865;
+            /* Tom mais claro */
+            --secondary: #8b7355;
+            /* Complementar quente */
+            --accent: #a68b5b;
+            /* Dourado suave */
+            --tertiary: #5d4e3a;
+            /* Tom intermediário */
+            --light: #faf9f7;
+            /* Bege muito claro */
+            --light-gray: #f2f0ec;
+            /* Cinza bege */
+            --medium-gray: #d4d0c8;
+            /* Cinza médio */
+            --dark: #2d251a;
+            /* Marrom escuro */
+            --white: #ffffff;
+            /* Branco puro */
+            --text-light: #6b635a;
+            /* Texto claro */
+            --text-dark: #3d3529;
+            /* Texto escuro */
+            --shadow-light: rgba(105, 86, 67, 0.1);
+            --shadow-medium: rgba(105, 86, 67, 0.2);
+            --shadow-dark: rgba(105, 86, 67, 0.3);
         }
 
         * {
@@ -24,23 +48,29 @@
         }
 
         body {
-            color: var(--dark);
+            color: var(--text-dark);
             background-color: var(--white);
             line-height: 1.6;
         }
 
-        header {
-            background-color: var(--white);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+     
 
+        /* Header */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            position: fixed;
+            height: 90px;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 20px var(--shadow-light);
+            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -56,7 +86,7 @@
         }
 
         .logo img {
-            height: 60px;
+            height: 55px;
         }
 
         .logo h1 {
@@ -66,12 +96,24 @@
             font-weight: 700;
         }
 
+        /* Navegação */
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
         .menu-link {
-            color: var(--dark);
+            color: white;
             text-decoration: none;
             position: relative;
             font-weight: 500;
             font-size: 16px;
+            transition: all 0.3s ease;
         }
 
         .menu-link::after {
@@ -81,8 +123,8 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s;
+            background-color: #c2a661;
+            transition: width 0.3s ease;
         }
 
         .menu-link:hover::after,
@@ -90,73 +132,56 @@
             width: 100%;
         }
 
-        .menu-link:hover {
-            color: var(--primary);
-        }
-
+        .menu-link:hover,
         .menu-link.active {
-            color: #003366;
+            color: #f4f4f4;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
+        #btn-header {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow-light);
         }
 
-        nav ul li {
-            margin-left: 30px;
+        #btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
+        /* Dropdown */
+        .dropdown {
             position: relative;
         }
 
-        nav ul li a:not(:has(button))::after {
-            content: '';
+        .submenu {
+            display: none;
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
+            top: 100%;
             left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s;
+            background-color: var(--white);
+            min-width: 180px;
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            z-index: 101;
+            border-radius: 8px;
+            padding: 8px 0;
+            border: 1px solid var(--light-gray);
         }
 
-        nav button {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 10px 20px;
-            margin-left: 60px;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        nav button:hover {
-            transform: translateY(-10%);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a:hover:after {
-            width: 100%;
+        .dropdown:hover .submenu {
+            display: block;
         }
 
         .page-header {
             padding: 120px 0 60px;
-            background: linear-gradient(rgba(14, 59, 94, 0.1), rgba(14, 59, 94, 0.1));
+            background-color: white;
             text-align: center;
         }
 
@@ -169,7 +194,7 @@
 
         .page-header p {
             font-size: 18px;
-            color: var(--dark);
+            color: var(--text-light);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -190,10 +215,11 @@
             border-radius: 15px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px var(--shadow-light);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border-top: 4px solid var(--secondary);
         }
 
         .team-member::before {
@@ -203,12 +229,13 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
 
         .team-member:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px var(--shadow-medium);
+            border-top-color: var(--accent);
         }
 
         .member-img {
@@ -217,15 +244,15 @@
             border-radius: 50%;
             margin: 0 auto 30px;
             overflow: hidden;
-            border: 5px solid var(--light);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid var(--light-gray);
+            box-shadow: 0 10px 20px var(--shadow-light);
             transition: all 0.3s ease;
             position: relative;
         }
 
         .team-member:hover .member-img {
             transform: scale(1.05);
-            border-color: var(--secondary);
+            border-color: var(--accent);
         }
 
         .member-img img {
@@ -251,7 +278,7 @@
         }
 
         .member-bio {
-            color: var(--dark);
+            color: var(--text-light);
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 25px;
@@ -264,6 +291,7 @@
             padding: 20px;
             margin-bottom: 25px;
             text-align: left;
+            border: 1px solid var(--light-gray);
         }
 
         .member-details h4 {
@@ -279,7 +307,7 @@
         }
 
         .member-details li {
-            color: var(--dark);
+            color: var(--text-light);
             font-size: 14px;
             margin-bottom: 8px;
             position: relative;
@@ -304,7 +332,7 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             display: flex;
             align-items: center;
@@ -312,16 +340,17 @@
             transition: all 0.3s ease;
             text-decoration: none;
             font-size: 18px;
+            box-shadow: 0 4px 15px var(--shadow-light);
         }
 
         .social-icons a:hover {
-            background-color: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px var(--shadow-medium);
         }
 
         .leadership-section {
-            background-color: var(--light);
+            background: linear-gradient(135deg, var(--light), var(--light-gray));
             padding: 80px 0;
         }
 
@@ -329,11 +358,12 @@
             background-color: var(--white);
             border-radius: 20px;
             padding: 50px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px var(--shadow-light);
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 40px;
             align-items: center;
+            border-top: 4px solid var(--secondary);
         }
 
         .leadership-image {
@@ -341,8 +371,14 @@
             height: 250px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px var(--shadow-medium);
+            border: 3px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
 
+        .leadership-card:hover .leadership-image {
+            border-color: var(--accent);
+            transform: scale(1.02);
         }
 
         .leadership-image img {
@@ -368,10 +404,11 @@
         }
 
         .leadership-content p {
-            color: var(--dark);
+            color: var(--text-light);
             font-size: 16px;
             line-height: 1.8;
             margin-bottom: 30px;
+            text-align: justify;
         }
 
         .section-title {
@@ -393,10 +430,11 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background: rgb(215, 78, 78);
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .back-link {
@@ -407,11 +445,15 @@
             font-weight: 600;
             margin-bottom: 30px;
             transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 25px;
+            background-color: rgba(105, 86, 67, 0.1);
         }
 
         .back-link:hover {
             color: var(--secondary);
             transform: translateX(-5px);
+            background-color: rgba(105, 86, 67, 0.15);
         }
 
         .back-link i {
@@ -419,26 +461,35 @@
         }
 
         footer {
-            background-color: var(--dark);
+            background: linear-gradient(135deg, var(--dark), var(--tertiary));
             color: var(--white);
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            gap: 10px;
         }
 
         .footer-links a {
             color: var(--white);
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--accent);
+        }
+
+        footer p {
+            font-weight: 400;
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
@@ -476,6 +527,15 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-links a {
+                margin: 0;
+            }
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -483,25 +543,26 @@
 </head>
 
 <body>
-    <header>
+    <header style="background-color: #695643;">
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
                     <img src="../imagens/logo.png" alt="Barrueco Advogados Logo">
-                    <h1></h1>
+
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="../index.html" class="menu-link">Início</a></li>
+                        <li><a href="../index.html#inicio" class="menu-link">Início</a></li>
                         <li><a href="../index.html#sobre" class="menu-link">Sobre</a></li>
                         <li><a href="../index.html#areas" class="menu-link">Atuação</a></li>
-                        <li><a href="equipe.html" class="menu-link active">Equipe</a></li>
+                        <li><a href="equipe.html" class="menu-link">Equipe</a></li>
                         <li><a href="../index.html#testemunha" class="menu-link">Depoimentos</a></li>
-                         <li><a href="../paginas/noticias.html" class="menu-link">Notícias</a></li>
+                        <li class="dropdown">
+                            <a href="noticias.html" class="menu-link">Notícias</a>
+                        </li>
                         <li><a href="../index.html#redes" class="menu-link">Redes</a></li>
                         <li><a href="../index.html#contato" class="menu-link">Contato</a></li>
-                        <li><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button id="btn-header">Acompanhe
-                                    seu processo</button></a></li>
+                        <li><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button style="margin-left: 30px;" id="btn-header">Acompanhe seu processo</button></a></li>
                     </ul>
                 </nav>
             </div>
@@ -573,36 +634,29 @@
                 <h2>Advogados Especialistas</h2>
             </div>
             <div class="team-grid">
-                <div class="team-member">
- <a href="andre_andrade.html" style="text-decoration: none;" >
-    
-    
-                        <div class="member-img"
-                            style="background-size: cover; background-image: url(../imagens/ft-advogados/adv_2.png); background-position: center top;">
-    
-                        </div>
-                        <h3>Dr. André Andrade</h3>
-                        <p class="position">Especialista em Direito Civil</p>
-    
-    
-                        <div class="member-bio">
-                            <p>Advogado especialista em Direito Civil com ampla experiência em contratos, responsabilidade
-                                civil e direito de família. Graduado pela PUC-SP com especialização em Direito Civil e
-                                Processual Civil.</p>
-                        </div>
-    
-                        <div class="member-details">
-                            <h4>Áreas de Especialização:</h4>
-                            <ul>
-                                <li>Contratos Civis e Comerciais</li>
-                                <li>Responsabilidade Civil</li>
-                                <li>Direito de Família</li>
-                                <li>Sucessões e Inventários</li>
-                                <li>Direito do Consumidor</li>
-                            </ul>
-                        </div>
-</a>
+                <div class="team-member" onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
+                    <div class="member-img"
+                        style="background-size: cover; background-image: url(../imagens/ft-advogados/adv_2.png); background-position: center top;">
+                    </div>
+                    <h3>Dr. André Andrade</h3>
+                    <p class="position">Especialista em Direito Civil</p>
 
+                    <div class="member-bio">
+                        <p>Advogado especialista em Direito Civil com ampla experiência em contratos, responsabilidade
+                            civil e direito de família. Graduado pela PUC-SP com especialização em Direito Civil e
+                            Processual Civil.</p>
+                    </div>
+
+                    <div class="member-details">
+                        <h4>Áreas de Especialização:</h4>
+                        <ul>
+                            <li>Contratos Civis e Comerciais</li>
+                            <li>Responsabilidade Civil</li>
+                            <li>Direito de Família</li>
+                            <li>Sucessões e Inventários</li>
+                            <li>Direito do Consumidor</li>
+                        </ul>
+                    </div>
 
                     <div class="social-icons">
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -610,7 +664,8 @@
                     </div>
                 </div>
 
-                <div class="team-member">
+
+                <div class="team-member" onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
                     <div class="member-img">
                         <img src="/api/placeholder/200/200" alt="Dr. Rafael Oliveira">
                     </div>
@@ -637,7 +692,7 @@
                     </div>
                 </div>
 
-                <div class="team-member">
+                <div class="team-member"  onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
                     <div class="member-img">
                         <img src="/api/placeholder/200/200" alt="Dra. Camila Mendes">
                     </div>
@@ -664,7 +719,7 @@
                     </div>
                 </div>
 
-                <div class="team-member">
+                <div class="team-member"  onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
                     <div class="member-img">
                         <img src="/api/placeholder/200/200" alt="Dr. Lucas Ferreira">
                     </div>
@@ -691,7 +746,7 @@
                     </div>
                 </div>
 
-                <div class="team-member">
+                <div class="team-member"  onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
                     <div class="member-img">
                         <img src="/api/placeholder/200/200" alt="Dra. Patricia Costa">
                     </div>
@@ -717,7 +772,7 @@
                     </div>
                 </div>
 
-                <div class="team-member">
+                <div class="team-member"  onclick="location.href='andre_andrade.html';" style="cursor: pointer;">
                     <div class="member-img">
                         <img src="/api/placeholder/200/200" alt="Dr. Marcos Silva">
                     </div>

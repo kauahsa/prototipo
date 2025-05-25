@@ -56,6 +56,7 @@ header {
     background-color: var(--white);
     position: fixed;
     width: 100%;
+    height: 90px;
     z-index: 100;
     box-shadow: 0 2px 20px var(--shadow-light);
     transition: all 0.3s ease;
@@ -271,7 +272,7 @@ background-color: #48626C;
 .btn-outline:hover {
     background-color: var(--white);
     color: var(--primary);
-    border-color: var(--white);
+    border-color: var(--primary-light);
 }
 
 .btn-form {
