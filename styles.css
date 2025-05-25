@@ -1218,7 +1218,7 @@ footer p {
 }
 
 /* Para telas muito pequenas */
-@media (max-width: 480px) {
+@media (max-width: 780px) {
     .mobile-menu-content {
         width: 100%;
         right: -100%;
