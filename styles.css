@@ -876,6 +876,10 @@ footer p {
     opacity: 0.8;
 }
 
+#menu-toggle:hover {
+    cursor:pointer;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
@@ -1218,7 +1222,7 @@ footer p {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 780px) {
     .mobile-menu-content {
         width: 100%;
         right: -100%;
