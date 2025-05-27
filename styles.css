@@ -879,6 +879,178 @@ footer p {
 #menu-toggle:hover {
     cursor:pointer;
 }
+/* Otimização específica para largura 1280px */
+@media screen and (max-width: 1399px)  {
+    
+    /* Tipografia - Tamanhos de fonte ajustados */
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title h3 {
+        font-size: 28px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .menu-link {
+        font-size: 14px;
+    }
+
+    /* Cards das áreas - tamanhos reduzidos */
+    .area-card {
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+
+    .area-icon {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .area-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .area-desc {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Cards de depoimentos - tamanhos reduzidos */
+    .testimonial {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .testimonial p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .client-info h5 {
+        font-size: 16px;
+    }
+
+    .client-info p {
+        font-size: 13px;
+    }
+
+    .client-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Cards de redes sociais - tamanhos reduzidos */
+    .social-platform {
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    .platform-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .platform-info h4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .platform-info p {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .follow-btn {
+        padding: 5px 14px;
+        font-size: 11px;
+    }
+
+    /* Newsletter card - tamanho reduzido */
+    .newsletter-content {
+        padding: 30px 25px;
+        border-radius: 10px;
+    }
+
+    .newsletter-intro p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-benefits li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .newsletter-form-group input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Botões - tamanhos reduzidos */
+    .btn {
+        padding: 12px 28px;
+        font-size: 14px;
+        border-radius: 25px;
+    }
+
+    .btn-newsletter {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .btn-form {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    #btn-header {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    /* Contato - ajustes de fonte */
+    .contact-info h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .contact-item p {
+        font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Footer - fonte menor */
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    /* Ícones sociais */
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
 
 /* Responsividade */
 @media (max-width: 768px) {

@@ -692,31 +692,266 @@
             box-shadow: 0 8px 25px var(--shadow-medium);
             background: linear-gradient(135deg, var(--accent), var(--secondary));
         }
+
         .submenu li a::after {
-    display: none !important;
-}
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--white);
-    min-width: 180px;
-    box-shadow: 0 8px 25px var(--shadow-medium);
-    z-index: 101;
-    border-radius: 8px;
-    padding: 8px 0;
-    border: 1px solid var(--light-gray);
-}
-.mobile-menu-content{
-    display: none;
-}
-.mobile-menu {
-    display: none;
-}
-#menu-toggle:hover {
-    cursor:pointer;
-}
+            display: none !important;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 180px;
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            z-index: 101;
+            border-radius: 8px;
+            padding: 8px 0;
+            border: 1px solid var(--light-gray);
+        }
+
+        .mobile-menu-content {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        #menu-toggle:hover {
+            cursor: pointer;
+        }
+
+      
+        @media (max-width: 1399px) {
+            .container {
+                max-width: 1200px;
+                padding: 0 18px;
+            }
+
+            /* Header ajustes */
+            header {
+                height: 80px;
+            }
+
+            .logo img {
+                height: 48px;
+            }
+
+            .logo h1 {
+                font-size: 22px;
+            }
+
+            nav ul li {
+                margin-left: 25px;
+            }
+
+            nav ul li a {
+                font-size: 15px;
+            }
+
+            #btn-header {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            /* Page header */
+            .page-header {
+                padding: 130px 0 70px;
+            }
+
+            .page-header h2 {
+                font-size: 38px;
+                margin-bottom: 18px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+                max-width: 650px;
+            }
+
+            /* Section titles */
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                margin-bottom: 50px;
+            }
+
+            .section-title h3 {
+                font-size: 32px;
+                padding-bottom: 12px;
+            }
+
+            .section-title h3:after {
+                width: 50px;
+                height: 2px;
+            }
+
+            /* News filters */
+            .news-filters {
+                padding: 18px 0;
+                margin-bottom: 35px;
+            }
+
+            .filter-btn {
+                padding: 7px 18px;
+                font-size: 13px;
+            }
+
+            .search-box input {
+                padding: 9px 13px;
+                font-size: 13px;
+                width: 220px;
+            }
+
+            .search-box button {
+                width: 34px;
+                height: 34px;
+                margin-left: -34px;
+            }
+
+            /* News grid */
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 25px;
+                margin-bottom: 45px;
+            }
+
+            .news-card {
+                border-radius: 10px;
+                border-top: 3px solid var(--secondary);
+            }
+
+            .news-img {
+                height: 180px;
+            }
+
+            .news-content {
+                padding: 22px;
+            }
+
+            .news-category {
+                padding: 4px 10px;
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+
+            .news-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .news-excerpt {
+                font-size: 13px;
+                margin-bottom: 18px;
+            }
+
+            .news-meta {
+                padding-top: 12px;
+                font-size: 12px;
+            }
+
+            .author-img {
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+
+            /* Featured news */
+            .featured-news {
+                grid-column: span 2;
+            }
+
+            .featured-news .news-img {
+                height: 100%;
+            }
+
+            .featured-news .news-content {
+                padding: 30px;
+            }
+
+            .featured-news .news-title {
+                font-size: 25px;
+                margin-bottom: 18px;
+            }
+
+            .featured-news .news-excerpt {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            /* Pagination */
+            .pagination {
+                margin-top: 35px;
+                margin-bottom: 35px;
+            }
+
+            .page-link {
+                width: 36px;
+                height: 36px;
+                margin: 0 4px;
+                font-size: 14px;
+            }
+
+            /* Newsletter banner */
+            .newsletter-banner {
+                padding: 50px 0;
+                margin-bottom: 70px;
+            }
+
+            .newsletter-banner h3 {
+                font-size: 28px;
+                margin-bottom: 18px;
+            }
+
+            .newsletter-banner p {
+                font-size: 15px;
+                max-width: 650px;
+                margin: 0 auto 25px;
+            }
+
+            .newsletter-form {
+                max-width: 550px;
+            }
+
+            .newsletter-form input {
+                padding: 13px;
+                font-size: 15px;
+            }
+
+            .newsletter-form button {
+                padding: 0 22px;
+                font-size: 15px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 35px 0;
+            }
+
+            .footer-links {
+                margin-bottom: 22px;
+                gap: 8px;
+            }
+
+            .footer-links a {
+                margin: 0 18px;
+                font-size: 15px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+
+            /* Buttons */
+            .btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
 
         /* Responsividade */
         @media (max-width: 1200px) {
@@ -738,12 +973,12 @@
 
         @media (max-width: 768px) {
             .nav-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        display: none;
-    }
-    
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                display: none;
+            }
+
             .filter-container {
                 flex-direction: column;
                 gap: 20px;
@@ -1168,122 +1403,122 @@
             .news-grid {
                 grid-template-columns: 1fr;
             }
+
             .mobile-menu-content {
-        width: 100%;
-        right: -100%;
-    }
-    
-    .mobile-logo img {
-        max-width: 200px;
-    }
-    
-    .mobile-menu-header {
-        padding: 20px 15px;
-    }
-    
-    .mobile-menu-link {
-        padding: 16px 20px;
-        font-size: 15px;
-    }
-    
-    .mobile-menu-footer {
-        padding: 20px 15px;
-    }
+                width: 100%;
+                right: -100%;
+            }
+
+            .mobile-logo img {
+                max-width: 200px;
+            }
+
+            .mobile-menu-header {
+                padding: 20px 15px;
+            }
+
+            .mobile-menu-link {
+                padding: 16px 20px;
+                font-size: 15px;
+            }
+
+            .mobile-menu-footer {
+                padding: 20px 15px;
+            }
 
 
-    .logo {
+            .logo {
 
-        margin-bottom: 15px;
-    }
+                margin-bottom: 15px;
+            }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
 
-    nav ul li {
-        margin: 5px 10px;
-    }
+            nav ul li {
+                margin: 5px 10px;
+            }
 
-    #btn-header {
-        margin-top: 10px;
-        padding: 10px 20px;
-        font-size: 13px;
-    }
+            #btn-header {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 13px;
+            }
 
-    .hero h2 {
-        font-size: 36px;
-    }
+            .hero h2 {
+                font-size: 36px;
+            }
 
-    .hero p {
-        font-size: 18px;
-    }
+            .hero p {
+                font-size: 18px;
+            }
 
-    .cta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+            .cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .section {
-        padding: 60px 0;
-    }
+            .section {
+                padding: 60px 0;
+            }
 
-    .section-title h3 {
-        font-size: 28px;
-    }
+            .section-title h3 {
+                font-size: 28px;
+            }
 
-    .areas-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+            .areas-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
 
-    .area-card {
-        padding: 30px 20px;
-    }
+            .area-card {
+                padding: 30px 20px;
+            }
 
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .social-platforms {
-        grid-template-columns: 1fr;
-    }
+            .social-platforms {
+                grid-template-columns: 1fr;
+            }
 
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
-    }
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
 
-    .newsletter-content {
-        padding: 30px 20px;
-        margin: 0 15px;
-    }
+            .newsletter-content {
+                padding: 30px 20px;
+                margin: 0 15px;
+            }
 
-    .newsletter-intro p {
-        font-size: 16px;
-    }
+            .newsletter-intro p {
+                font-size: 16px;
+            }
 
-    .newsletter-benefits {
-        margin-left: 0;
-    }
+            .newsletter-benefits {
+                margin-left: 0;
+            }
 
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
 
-    .footer-links a {
-        margin: 0;
-    }
-    
+            .footer-links a {
+                margin: 0;
+            }
+
         }
-
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -1317,7 +1552,8 @@
 
         <div class="mobile-menu">
             <div class="mobile-logo">
-                <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png" alt="Barrueco Advogados Logo">
+                <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png"
+                    alt="Barrueco Advogados Logo">
             </div>
             <div class="mobile-menu-icon" id="menu-toggle">
 
@@ -1393,7 +1629,8 @@
                 </ul>
 
             </nav>
-            <li style="margin-bottom: 40px; margin-left: 0px; display: flex; justify-content: center;"><a href="https://portaldeservicos.pdpj.jus.br/consulta"><button style="margin-left: 30px;"
+            <li style="margin-bottom: 40px; margin-left: 0px; display: flex; justify-content: center;"><a
+                    href="https://portaldeservicos.pdpj.jus.br/consulta"><button style="margin-left: 30px;"
                         id="btn-header">Acompanhe seu processo</button></a></li>
             <div class="mobile-menu-footer">
 
@@ -1633,126 +1870,126 @@
                 });
             });
         });
-        document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const menuContent = document.getElementById('menu-content');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const body = document.body;
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const menuContent = document.getElementById('menu-content');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const body = document.body;
 
-    // Função para abrir o menu
-    function openMenu() {
-        menuContent.classList.add('active');
-        menuOverlay.classList.add('active');
-        hamburgerMenu.classList.add('active');
-        body.style.overflow = 'hidden'; // Previne scroll do body
-        
-        // Adiciona animação de entrada aos itens do menu
-        const menuItems = document.querySelectorAll('.mobile-menu-item');
-        menuItems.forEach((item, index) => {
-            item.style.animationDelay = `${(index + 1) * 0.1}s`;
-        });
-    }
+            // Função para abrir o menu
+            function openMenu() {
+                menuContent.classList.add('active');
+                menuOverlay.classList.add('active');
+                hamburgerMenu.classList.add('active');
+                body.style.overflow = 'hidden'; // Previne scroll do body
 
-    // Função para fechar o menu
-    function closeMenu() {
-        menuContent.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        hamburgerMenu.classList.remove('active');
-        body.style.overflow = ''; // Restaura scroll do body
-    }
-
-    // Event listener para abrir o menu
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            openMenu();
-        });
-    }
-
-    // Event listener para fechar o menu (botão X)
-    if (menuClose) {
-        menuClose.addEventListener('click', function(e) {
-            e.preventDefault();
-            closeMenu();
-        });
-    }
-
-    // Event listener para fechar o menu (clique no overlay)
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', function() {
-            closeMenu();
-        });
-    }
-
-    // Fechar menu ao clicar em um link (navegação)
-    const menuLinks = document.querySelectorAll('.mobile-menu-link');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Se o link for para uma âncora na mesma página
-            const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                closeMenu();
-                
-                // Smooth scroll para a seção
-                const targetSection = document.querySelector(href);
-                if (targetSection) {
-                    setTimeout(() => {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }, 300); // Delay para permitir que o menu feche primeiro
-                }
-            } else {
-                // Para links externos, apenas fecha o menu
-                closeMenu();
+                // Adiciona animação de entrada aos itens do menu
+                const menuItems = document.querySelectorAll('.mobile-menu-item');
+                menuItems.forEach((item, index) => {
+                    item.style.animationDelay = `${(index + 1) * 0.1}s`;
+                });
             }
-            
-            // Adiciona efeito visual de clique
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
 
-    // Fechar menu com tecla ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && menuContent.classList.contains('active')) {
-            closeMenu();
-        }
-    });
+            // Função para fechar o menu
+            function closeMenu() {
+                menuContent.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+                body.style.overflow = ''; // Restaura scroll do body
+            }
 
-    // Prevenir scroll quando o menu estiver aberto
-    menuContent.addEventListener('touchmove', function(e) {
-        e.stopPropagation();
-    });
+            // Event listener para abrir o menu
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openMenu();
+                });
+            }
 
-    // Efeito de hover nos links sociais
-    const socialLinks = document.querySelectorAll('.mobile-social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.1)';
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
+            // Event listener para fechar o menu (botão X)
+            if (menuClose) {
+                menuClose.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    closeMenu();
+                });
+            }
 
-    // Adicionar efeito de ripple nos links do menu
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            ripple.style.cssText = `
+            // Event listener para fechar o menu (clique no overlay)
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', function () {
+                    closeMenu();
+                });
+            }
+
+            // Fechar menu ao clicar em um link (navegação)
+            const menuLinks = document.querySelectorAll('.mobile-menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // Se o link for para uma âncora na mesma página
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        closeMenu();
+
+                        // Smooth scroll para a seção
+                        const targetSection = document.querySelector(href);
+                        if (targetSection) {
+                            setTimeout(() => {
+                                targetSection.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 300); // Delay para permitir que o menu feche primeiro
+                        }
+                    } else {
+                        // Para links externos, apenas fecha o menu
+                        closeMenu();
+                    }
+
+                    // Adiciona efeito visual de clique
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Fechar menu com tecla ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && menuContent.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            // Prevenir scroll quando o menu estiver aberto
+            menuContent.addEventListener('touchmove', function (e) {
+                e.stopPropagation();
+            });
+
+            // Efeito de hover nos links sociais
+            const socialLinks = document.querySelectorAll('.mobile-social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-3px) scale(1.1)';
+                });
+
+                link.addEventListener('mouseleave', function () {
+                    this.style.transform = '';
+                });
+            });
+
+            // Adicionar efeito de ripple nos links do menu
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
                 position: absolute;
                 width: ${size}px;
                 height: ${size}px;
@@ -1764,44 +2001,44 @@
                 animation: ripple 0.6s ease-out;
                 pointer-events: none;
             `;
-            
-            this.style.position = 'relative';
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Adicionar animação de entrada para os ícones
+            const menuIcons = document.querySelectorAll('.mobile-menu-link i');
+            menuIcons.forEach((icon, index) => {
+                icon.addEventListener('mouseenter', function () {
+                    this.style.animation = 'bounce 0.6s ease';
+                });
+
+                icon.addEventListener('animationend', function () {
+                    this.style.animation = '';
+                });
+            });
+
+            // Detectar orientação do dispositivo e ajustar menu
+            function handleOrientationChange() {
+                if (menuContent.classList.contains('active')) {
+                    setTimeout(() => {
+                        // Reajustar posições se necessário
+                        menuContent.style.height = '100vh';
+                    }, 100);
+                }
+            }
+
+            window.addEventListener('orientationchange', handleOrientationChange);
+            window.addEventListener('resize', handleOrientationChange);
         });
-    });
 
-    // Adicionar animação de entrada para os ícones
-    const menuIcons = document.querySelectorAll('.mobile-menu-link i');
-    menuIcons.forEach((icon, index) => {
-        icon.addEventListener('mouseenter', function() {
-            this.style.animation = 'bounce 0.6s ease';
-        });
-        
-        icon.addEventListener('animationend', function() {
-            this.style.animation = '';
-        });
-    });
-
-    // Detectar orientação do dispositivo e ajustar menu
-    function handleOrientationChange() {
-        if (menuContent.classList.contains('active')) {
-            setTimeout(() => {
-                // Reajustar posições se necessário
-                menuContent.style.height = '100vh';
-            }, 100);
-        }
-    }
-
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleOrientationChange);
-});
-
-// CSS adicional para animações (adicionar ao CSS)
-const additionalStyles = `
+        // CSS adicional para animações (adicionar ao CSS)
+        const additionalStyles = `
     @keyframes ripple {
         to {
             transform: scale(4);
@@ -1822,10 +2059,10 @@ const additionalStyles = `
     }
 `;
 
-// Injetar CSS adicional
-const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet);
+        // Injetar CSS adicional
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = additionalStyles;
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 
