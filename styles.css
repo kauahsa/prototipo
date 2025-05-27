@@ -1217,7 +1217,7 @@ footer p {
     }
 }
 
-/* Para telas muito pequenas */
+
 @media (max-width: 480px) {
     .mobile-menu-content {
         width: 100%;
@@ -1240,7 +1240,7 @@ footer p {
     .mobile-menu-footer {
         padding: 20px 15px;
     }
-}
+
 
     .logo {
 
@@ -1333,32 +1333,4 @@ footer p {
         margin: 0;
     }
 
-
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .section-title h3 {
-        font-size: 24px;
-    }
-
-    .btn,
-    .btn-form,
-    .btn-newsletter {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
-
-    .area-icon {
-        font-size: 36px;
-    }
-
-    .contact-info h3 {
-        font-size: 24px;
-    }
 }
