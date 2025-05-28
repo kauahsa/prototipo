@@ -722,6 +722,29 @@
         #menu-toggle:hover {
             cursor: pointer;
         }
+        #zap {
+      position: fixed;
+      z-index: 100;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all ease 0.2s;
+    }
+    
+    #zap:hover {
+      width: 65px;
+      height: 65px;
+      transition: all ease 0.2s;
+    }
 
       
         @media (max-width: 1399px) {
@@ -954,16 +977,192 @@
         }
 
         /* Responsividade */
-        @media (max-width: 1200px) {
-            .featured-news {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-            }
+        /* Configuração para 1040px */
+@media (max-width: 1195px) {
+   .container {
+       max-width: 980px;
+       padding: 0 16px;
+   }
 
-            .featured-news .news-img {
-                height: 200px;
-            }
-        }
+   /* Header ajustes */
+   header {
+       height: 75px;
+   }
+
+   .nav-container {
+       padding: 12px 0;
+   }
+
+   .logo img {
+       height: 42px;
+   }
+
+   .logo h1 {
+       font-size: 20px;
+       margin-left: 8px;
+   }
+
+   nav ul li {
+       margin-left: 20px;
+   }
+
+   .menu-link {
+       font-size: 13px;
+   }
+
+   #btn-header {
+       padding: 7px 15px;
+       font-size: 11px;
+   }
+
+   /* Page header */
+   .page-header {
+       padding: 115px 0 60px;
+   }
+
+   .page-header h1 {
+       font-size: 40px;
+       margin-bottom: 16px;
+   }
+
+   .page-header p {
+       font-size: 15px;
+       max-width: 600px;
+   }
+
+   /* Section titles */
+   .team-section {
+       padding: 60px 0;
+   }
+
+   .section-title {
+       margin-bottom: 45px;
+   }
+
+   .section-title h2 {
+       font-size: 28px;
+       padding-bottom: 10px;
+   }
+
+   .section-title h2::after {
+       width: 45px;
+       height: 2px;
+   }
+
+   /* Team grid */
+   .team-grid {
+       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+       gap: 22px;
+       margin-bottom: 40px;
+   }
+
+   .team-member {
+       padding: 25px 20px;
+       border-radius: 8px;
+   }
+
+   .member-img {
+       width: 160px;
+       height: 160px;
+       margin-bottom: 20px;
+   }
+
+   .team-member h3 {
+       font-size: 18px;
+       margin-bottom: 6px;
+   }
+
+   .team-member .position {
+       font-size: 13px;
+       margin-bottom: 14px;
+   }
+
+   .member-bio {
+       font-size: 12px;
+       margin-bottom: 16px;
+   }
+
+   .member-details {
+       padding: 14px;
+       margin-bottom: 16px;
+   }
+
+   .member-details h4 {
+       font-size: 13px;
+       margin-bottom: 10px;
+   }
+
+   .member-details li {
+       font-size: 11px;
+       margin-bottom: 5px;
+   }
+
+   .social-icons {
+       gap: 10px;
+   }
+
+   .social-icons a {
+       width: 35px;
+       height: 35px;
+       font-size: 14px;
+   }
+
+   /* Leadership section */
+   .leadership-section {
+       padding: 60px 0;
+   }
+
+   .leadership-card {
+       padding: 30px;
+       gap: 25px;
+       grid-template-columns: 220px 1fr;
+   }
+
+   .leadership-image {
+       width: 200px;
+       height: 200px;
+   }
+
+   .leadership-content h3 {
+       font-size: 24px;
+       margin-bottom: 6px;
+   }
+
+   .leadership-content .position {
+       font-size: 14px;
+       margin-bottom: 16px;
+   }
+
+   .leadership-content p {
+       font-size: 13px;
+       margin-bottom: 20px;
+   }
+
+   /* Footer */
+   footer {
+       padding: 32px 0;
+   }
+
+   .footer-links {
+       margin-bottom: 20px;
+       gap: 6px;
+   }
+
+   .footer-links a {
+       margin: 0 15px;
+       font-size: 14px;
+   }
+
+   footer p {
+       font-size: 13px;
+   }
+
+   /* Back link */
+   .back-link {
+       padding: 7px 12px;
+       font-size: 14px;
+   }
+}
 
         @media (max-width: 992px) {
             .news-grid {
@@ -1528,7 +1727,7 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="../imagens/logo.png" alt="Barrueco Advogados Logo">
+                    <a href="../index.html#inicio"><img src="../imagens/logo.png" alt="Barrueco Advogados Logo"></a>
                     <h1></h1>
                 </div>
                 <nav>
@@ -1539,7 +1738,7 @@
                         <li><a href="equipe.html" class="menu-link">Equipe</a></li>
                         <li><a href="../index.html#testemunha" class="menu-link">Depoimentos</a></li>
                         <li class="dropdown">
-                            <a href="noticias.html" class="menu-link">Notícias</a>
+                            <a href="noticias.html" class="menu-link active">Notícias</a>
                         </li>
                         <li><a href="../index.html#redes" class="menu-link">Redes</a></li>
                         <li><a href="../index.html#contato" class="menu-link">Contato</a></li>
@@ -1552,8 +1751,10 @@
 
         <div class="mobile-menu">
             <div class="mobile-logo">
-                <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png"
-                    alt="Barrueco Advogados Logo">
+                <a href="../index.html#inicio">
+                    <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png"
+                        alt="Barrueco Advogados Logo">
+                </a>
             </div>
             <div class="mobile-menu-icon" id="menu-toggle">
 
@@ -1568,7 +1769,7 @@
         <div class="mobile-menu-content" id="menu-content">
             <div class="mobile-menu-header">
                 <div class="mobile-menu-logo">
-                    <img src="../imagens/logo.png" alt="Barrueco Advogados Logo">
+                    <a href="../index.html#inicio"><img src="../imagens/logo.png" alt="Barrueco Advogados Logo"></a>
                 </div>
                 <div class="mobile-close-btn" id="menu-close">
                     <span class="close-line close-line1"></span>
@@ -1829,6 +2030,9 @@
             </form>
         </div>
     </section>
+    <a href="https://wa.me/5514981111872" id="zap" style="text-decoration: none;" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
 
     <footer>
         <div class="container">

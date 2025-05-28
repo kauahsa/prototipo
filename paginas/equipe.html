@@ -123,7 +123,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: #c2a661;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
             transition: width 0.3s ease;
         }
 
@@ -522,6 +522,30 @@
             cursor: pointer;
         }
 
+        #zap {
+            position: fixed;
+            z-index: 100;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all ease 0.2s;
+        }
+
+        #zap:hover {
+            width: 65px;
+            height: 65px;
+            transition: all ease 0.2s;
+        }
+
         /* Configuração para 1280px */
         @media (max-width: 1399px) {
             .container {
@@ -751,6 +775,320 @@
                 font-size: 14px;
             }
         }
+        /* Design responsivo para resolução 1040px */
+@media (max-width: 1195px) {
+    .container {
+        max-width: 980px;
+        padding: 0 16px;
+    }
+
+    /* Header ajustes */
+    header {
+        height: 75px;
+    }
+
+    .nav-container {
+        padding: 12px 0;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        margin-left: 8px;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    .menu-link {
+        font-size: 13px;
+        
+    }
+
+    #btn-header {
+        padding: 7px 15px;
+        font-size: 11px;
+        border-radius: 20px;
+    }
+
+    /* Dropdown adjustments */
+    .submenu {
+        min-width: 160px;
+        padding: 6px 0;
+    }
+
+    .submenu li a {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    /* Page header */
+    .page-header {
+        padding: 115px 0 60px;
+    }
+
+    .page-header h1 {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+
+    .page-header p {
+        font-size: 15px;
+        max-width: 600px;
+    }
+
+    /* Section titles */
+    .team-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+        padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+        width: 45px;
+        height: 2px;
+    }
+
+    /* Team grid */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 22px;
+        margin-bottom: 40px;
+    }
+
+    .team-member {
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+
+    .member-img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+        border-width: 3px;
+    }
+
+    .team-member h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .team-member .position {
+        font-size: 13px;
+        margin-bottom: 14px;
+        letter-spacing: 0.8px;
+    }
+
+    .member-bio {
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .member-details {
+        padding: 14px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+    }
+
+    .member-details h4 {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .member-details li {
+        font-size: 11px;
+        margin-bottom: 5px;
+        padding-left: 16px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    /* Leadership section */
+    .leadership-section {
+        padding: 60px 0;
+    }
+
+    .leadership-card {
+        padding: 30px;
+        gap: 25px;
+        grid-template-columns: 220px 1fr;
+        border-radius: 15px;
+    }
+
+    .leadership-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 12px;
+        border-width: 2px;
+    }
+
+    .leadership-content h3 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .leadership-content .position {
+        font-size: 14px;
+        margin-bottom: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    .leadership-content p {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    /* Back link */
+    .back-link {
+        padding: 7px 12px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    .back-link i {
+        margin-right: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 32px 0;
+    }
+
+    .footer-links {
+        margin-bottom: 20px;
+        gap: 6px;
+    }
+
+    .footer-links a {
+        margin: 0 15px;
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    /* WhatsApp button adjustment */
+    #zap {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 18px;
+        right: 18px;
+    }
+
+    #zap:hover {
+        width: 55px;
+        height: 55px;
+    }
+
+    /* Additional responsive adjustments */
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Buttons and form elements */
+    .btn,
+    button:not(#btn-header):not(.mobile-close-btn):not(.hamburger-menu) {
+        padding: 8px 16px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    /* Text adjustments */
+    p {
+        font-size: 13px;
+    }
+
+    h1:not(.page-header h1):not(.logo h1) {
+        font-size: 32px;
+    }
+
+    h2:not(.section-title h2) {
+        font-size: 24px;
+    }
+
+    h3:not(.team-member h3):not(.leadership-content h3):not(.member-details h4) {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    /* Input and form adjustments */
+    input,
+    textarea,
+    select {
+        padding: 8px 12px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    /* Card and container spacing */
+    .card,
+    .info-card,
+    .service-card {
+        padding: 20px 16px;
+        border-radius: 8px;
+    }
+
+    /* Spacing adjustments */
+    .section {
+        padding: 50px 0;
+    }
+
+    /* Margin adjustments */
+    .mb-1 { margin-bottom: 4px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-5 { margin-bottom: 20px; }
+
+    .mt-1 { margin-top: 4px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-5 { margin-top: 20px; }
+
+    /* Padding adjustments */
+    .p-1 { padding: 4px; }
+    .p-2 { padding: 8px; }
+    .p-3 { padding: 12px; }
+    .p-4 { padding: 16px; }
+    .p-5 { padding: 20px; }
+}
+
 
         @media (max-width: 768px) {
             .nav-container {
@@ -1293,15 +1631,15 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="../imagens/logo.png" alt="Barrueco Advogados Logo">
-                    <h1></h1>
+                    <a href="../index.html#inicio"><img src="../imagens/logo.png" alt="Barrueco Advogados Logo"></a>
+
                 </div>
                 <nav>
                     <ul>
                         <li><a href="../index.html#incio" class="menu-link">Início</a></li>
                         <li><a href="../index.html#sobre" class="menu-link">Sobre</a></li>
                         <li><a href="../index.html#areas" class="menu-link">Atuação</a></li>
-                        <li><a href="equipe.html" class="menu-link">Equipe</a></li>
+                        <li><a href="equipe.html" class="menu-link active">Equipe</a></li>
                         <li><a href="../index.html#testemunha" class="menu-link">Depoimentos</a></li>
                         <li class="dropdown">
                             <a href="noticias.html" class="menu-link">Notícias</a>
@@ -1317,8 +1655,10 @@
 
         <div class="mobile-menu">
             <div class="mobile-logo">
-                <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png"
-                    alt="Barrueco Advogados Logo">
+                <a href="../index.html#inicio">
+                    <img style="padding-left: 20px; margin-top: 12px;" src="../imagens/logo.png"
+                        alt="Barrueco Advogados Logo">
+                </a>
             </div>
             <div class="mobile-menu-icon" id="menu-toggle">
 
@@ -1333,7 +1673,7 @@
         <div class="mobile-menu-content" id="menu-content">
             <div class="mobile-menu-header">
                 <div class="mobile-menu-logo">
-                    <img src="../imagens/logo.png" alt="Barrueco Advogados Logo">
+                    <a href="../index.html#inicio"><img src="../imagens/logo.png" alt="Barrueco Advogados Logo"></a>
                 </div>
                 <div class="mobile-close-btn" id="menu-close">
                     <span class="close-line close-line1"></span>
@@ -1647,6 +1987,10 @@
             </div>
         </div>
     </section>
+    <a href="https://wa.me/5514981111872" id="zap" style="text-decoration: none;" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 
     <footer>
         <div class="container">
