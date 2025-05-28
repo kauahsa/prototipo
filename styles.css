@@ -758,14 +758,16 @@ nav ul li {
     margin-bottom: 25px;
     font-weight: 700;
 }
+.contact-info{
+    color: white;
+    text-decoration: none;
+}
 
 .contact-details {
     margin-bottom: 35px;
 }
 
 .contact-item {
-    text-decoration: none;
-    color: white;
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
