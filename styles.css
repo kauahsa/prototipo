@@ -765,6 +765,7 @@ nav ul li {
 
 .contact-item {
     text-decoration: none;
+    color: white;
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
