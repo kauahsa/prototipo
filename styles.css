@@ -1463,7 +1463,6 @@ footer p {
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
-
     }
 
     .nav-container {
@@ -1473,7 +1472,7 @@ footer p {
         display: none;
     }
 
-        .mobile-menu {
+    .mobile-menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1798,35 +1797,128 @@ footer p {
     .mobile-menu-content::-webkit-scrollbar-thumb:hover {
         background: var(--secondary);
     }
-}
 
+    /* Newsletter Mobile Styles */
+    .newsletter-content {
+        padding: 40px 20px;
+        margin: 0 10px;
+        text-align: center;
+    }
 
-@media (max-width: 780px) {
-    .mobile-menu-content {
+    .newsletter-intro {
+        margin-bottom: 30px;
+    }
+
+    .newsletter-intro .section-title h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-intro p {
+        font-size: 16px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .newsletter-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+        text-align: left;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter-benefits li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .newsletter-benefits li i {
+        color: var(--accent);
+        margin-right: 12px;
+        font-size: 14px;
+        min-width: 16px;
+    }
+
+    .newsletter-form-container {
         width: 100%;
-        right: -100%;
     }
-    
-    .mobile-logo img {
-        max-width: 200px;
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
     }
-    
-    .mobile-menu-header {
-        padding: 20px 15px;
+
+    .newsletter-form-group {
+        width: 100%;
     }
-    
-    .mobile-menu-link {
+
+    .newsletter-form-group input {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border: 2px solid var(--light-gray);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .newsletter-form-group input:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(105, 86, 67, 0.1);
+    }
+
+    .newsletter-submit {
+        margin-bottom: 15px;
+    }
+
+    .btn-newsletter {
+        width: 100%;
         padding: 16px 20px;
-        font-size: 15px;
-    }
-    
-    .mobile-menu-footer {
-        padding: 20px 15px;
+        font-size: 16px;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
+    .btn-newsletter:hover {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(105, 86, 67, 0.3);
+    }
 
+    .newsletter-privacy {
+        font-size: 12px;
+        color: var(--text-medium);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .newsletter-privacy a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .newsletter-privacy a:hover {
+        text-decoration: underline;
+    }
+
+    /* Outros ajustes mobile existentes */
     .logo {
-
         margin-bottom: 15px;
     }
 
@@ -1884,24 +1976,6 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .newsletter-content {
-        padding: 30px 20px;
-        margin: 0 15px;
-    }
-
-    .newsletter-intro p {
-        font-size: 16px;
-    }
-
-    .newsletter-benefits {
-        margin-left: 0;
-    }
-
     .contact-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1915,5 +1989,66 @@ footer p {
     .footer-links a {
         margin: 0;
     }
+}
 
+@media (max-width: 480px) {
+    .newsletter-content {
+        padding: 30px 15px;
+        margin: 0 5px;
+    }
+
+    .newsletter-intro .section-title h3 {
+        font-size: 22px;
+    }
+
+    .newsletter-intro p {
+        font-size: 15px;
+    }
+
+    .newsletter-benefits {
+        max-width: 100%;
+    }
+
+    .newsletter-benefits li {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-form-group input {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .btn-newsletter {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+
+    .newsletter-privacy {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 780px) {
+    .mobile-menu-content {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .mobile-logo img {
+        max-width: 200px;
+    }
+    
+    .mobile-menu-header {
+        padding: 20px 15px;
+    }
+    
+    .mobile-menu-link {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+    
+    .mobile-menu-footer {
+        padding: 20px 15px;
+    }
 }
